@@ -5,9 +5,7 @@ import Card from "../../components/Card";
 const Home = () => {
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Card>
-        <Text>Hello world</Text>
-      </Card>
+      <Text>Hello this page about app</Text>
     </View>
   );
 };

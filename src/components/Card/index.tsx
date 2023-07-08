@@ -17,12 +17,15 @@ const Card = () => {
   const x = useSharedValue(0);
   const y = useSharedValue(0);
 
+  console.log(x, y)
+
   const gestureHandler = useAnimatedGestureHandler({
     onStart: (_, ctx) => {
       ctx.startX = x.value;
       ctx.startY = y.value;
     },
     onActive: (event, ctx) => {
+      console.log(x.value, 'x.value')
       x.value = ctx.startX + event.translationX;
       y.value = ctx.startY + event.translationY;
     },
