@@ -1,12 +1,12 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import CasesScreen from '../screens/Cases';
-import AnimationScreen from '../screens/Cases/Animation';
-import ProductScreen from '../screens/Cases/Product';
+import CasesScreen from '../../screens/Cases';
+import AnimationScreen from '../../screens/Cases/Animation';
+import ProductScreen from '../../screens/Cases/Product';
 
 const Stack = createNativeStackNavigator();
 
-const CasesStack = () => {
+const Index = () => {
   return (
     <Stack.Navigator screenOptions={{
       headerStyle: {
@@ -24,4 +24,4 @@ const CasesStack = () => {
   );
 };
 
-export default CasesStack;
+export default Index;

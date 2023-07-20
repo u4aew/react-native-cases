@@ -1,15 +1,21 @@
-import React, { useEffect } from "react";
-import {View, Image, StyleSheet, Text, TouchableWithoutFeedback} from 'react-native';
+import React from 'react';
+import {View, Image, StyleSheet, TouchableWithoutFeedback} from 'react-native';
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
   withTiming,
 } from 'react-native-reanimated';
 
-const AnimatedTouchableOpacity =
-  Animated.createAnimatedComponent(TouchableWithoutFeedback);
+const AnimatedTouchableOpacity = Animated.createAnimatedComponent(
+  TouchableWithoutFeedback,
+);
 
-const Preview = ({ isLast }: { isLast: boolean }) => {
+type Props = {
+  isLast: boolean;
+  onPress: (item: any) => void
+}
+
+const Preview = ({isLast, onPress, ...props}: Props) => {
   const scale = useSharedValue(1);
 
   const animatedStyles = useAnimatedStyle(() => {
@@ -26,9 +32,14 @@ const Preview = ({ isLast }: { isLast: boolean }) => {
     scale.value = withTiming(1, {duration: 200});
   };
 
+  const handlePress = () => {
+    onPress(props)
+  }
+
   return (
     <AnimatedTouchableOpacity
       onPressIn={handlePressIn}
+      onPress={handlePress}
       onPressOut={handlePressOut}
       style={[animatedStyles]}>
       <View style={styles.item}>
@@ -67,5 +78,5 @@ const styles = StyleSheet.create({
   tinyLogo: {
     height: 100,
     width: 100,
-  }
+  },
 });
