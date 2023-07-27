@@ -47,45 +47,47 @@ export default function BottomSheet() {
   });
 
   return (
-    <GestureHandlerRootView
-      pointerEvents={isOpen ? 'auto' : 'none'}
-      style={styles.box}>
-      <PanGestureHandler onGestureEvent={gestureHandler}>
-        <View style={styles.box}>
-          <Animated.View
-            style={[styles.box, styles.overlay, {opacity: opacity}]}
-          />
-          <Animated.View style={[styles.container, animatedStyles]}>
-            <Text>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
-              at blanditiis consequatur culpa dolorum, expedita impedit in
-              itaque iure mollitia optio praesentium soluta totam unde
-              voluptatum. Expedita veritatis vitae voluptate! Lorem ipsum dolor
-              sit amet, consectetur adipisicing elit. Adipisci at blanditiis
-              consequatur culpa dolorum, expedita impedit in itaque iure
-              mollitia optio praesentium soluta totam unde voluptatum. Expedita
-              veritatis vitae voluptate! Lorem ipsum dolor sit amet, consectetur
-              adipisicing elit. Adipisci at blanditiis consequatur culpa
-              dolorum, expedita impedit in itaque iure mollitia optio
-              praesentium soluta totam unde voluptatum. Expedita veritatis vitae
-              voluptate! Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit. Adipisci at blanditiis consequatur culpa dolorum, expedita
-              impedit in itaque iure mollitia optio praesentium soluta totam
-              unde voluptatum. Expedita veritatis vitae voluptate! Lorem ipsum
-              dolor sit amet, consectetur adipisicing elit. Adipisci at
-              blanditiis consequatur culpa dolorum, expedita impedit in itaque
-              iure mollitia optio praesentium soluta totam unde voluptatum.
-              Expedita veritatis vitae voluptate! Lorem ipsum dolor sit amet,
-              consectetur adipisicing elit. Adipisci at blanditiis consequatur
-              culpa dolorum, expedita impedit in itaque iure mollitia optio
-              praesentium soluta totam unde voluptatum. Expedita veritatis vitae
-              voluptate! Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit. Adipisci at blanditiis consequatur culpa dolorum,
-            </Text>
-          </Animated.View>
-        </View>
-      </PanGestureHandler>
-    </GestureHandlerRootView>
+    <View pointerEvents={isOpen ? 'auto' : 'none'} style={styles.box}>
+      <GestureHandlerRootView style={styles.box}>
+        <PanGestureHandler onGestureEvent={gestureHandler}>
+          <View style={styles.box}>
+            <Animated.View
+              style={[styles.box, styles.overlay, {opacity: opacity}]}
+            />
+            <Animated.View style={[styles.container, animatedStyles]}>
+              <Text>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Adipisci at blanditiis consequatur culpa dolorum, expedita
+                impedit in itaque iure mollitia optio praesentium soluta totam
+                unde voluptatum. Expedita veritatis vitae voluptate! Lorem ipsum
+                dolor sit amet, consectetur adipisicing elit. Adipisci at
+                blanditiis consequatur culpa dolorum, expedita impedit in itaque
+                iure mollitia optio praesentium soluta totam unde voluptatum.
+                Expedita veritatis vitae voluptate! Lorem ipsum dolor sit amet,
+                consectetur adipisicing elit. Adipisci at blanditiis consequatur
+                culpa dolorum, expedita impedit in itaque iure mollitia optio
+                praesentium soluta totam unde voluptatum. Expedita veritatis
+                vitae voluptate! Lorem ipsum dolor sit amet, consectetur
+                adipisicing elit. Adipisci at blanditiis consequatur culpa
+                dolorum, expedita impedit in itaque iure mollitia optio
+                praesentium soluta totam unde voluptatum. Expedita veritatis
+                vitae voluptate! Lorem ipsum dolor sit amet, consectetur
+                adipisicing elit. Adipisci at blanditiis consequatur culpa
+                dolorum, expedita impedit in itaque iure mollitia optio
+                praesentium soluta totam unde voluptatum. Expedita veritatis
+                vitae voluptate! Lorem ipsum dolor sit amet, consectetur
+                adipisicing elit. Adipisci at blanditiis consequatur culpa
+                dolorum, expedita impedit in itaque iure mollitia optio
+                praesentium soluta totam unde voluptatum. Expedita veritatis
+                vitae voluptate! Lorem ipsum dolor sit amet, consectetur
+                adipisicing elit. Adipisci at blanditiis consequatur culpa
+                dolorum,
+              </Text>
+            </Animated.View>
+          </View>
+        </PanGestureHandler>
+      </GestureHandlerRootView>
+    </View>
   );
 }
 
