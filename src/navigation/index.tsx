@@ -4,7 +4,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import HomeScreen from '../screens/Home';
 import Index from './CasesStack';
-import BottomSheet from '../components/BottomSheet';
+import BottomSheet from '../common/BottomSheet';
 import {PortalProvider} from '@gorhom/portal';
 import {BottomSheetProvider} from '../context/BottomSheetProvider';
 

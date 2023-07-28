@@ -42,8 +42,7 @@ module.exports = {
   },
   mock: {
     routes: {
-      // Global delay to apply to routes
-      //delay: 0,
+      delay: 2000,
     },
     collections: {
       // Selected collection
@@ -73,11 +72,11 @@ module.exports = {
       // Options for the urlencoded body-parser middleware. Further information at https://github.com/expressjs/body-parser
       //options: {"extended":true},
     },
-    https: {
-      enabled: true,
-      cert: "./cert.pem",
-      key: "./key.pem"
-    }
+    // https: {
+    //   enabled: true,
+    //   cert: "./cert.pem",
+    //   key: "./key.pem"
+    // }
   },
   files: {
     // Allows to disable files load

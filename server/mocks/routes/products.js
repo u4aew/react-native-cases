@@ -1,35 +1,46 @@
-// Use this file only as a guide for first steps using routes. Delete it when you have added your own route files.
-// For a detailed explanation regarding each routes property, visit:
-// https://mocks-server.org/docs/usage/routes
-
-// users data
 const PRODUCTS = [
   {
+    key: 'a',
     id: 1,
-    name: "Coca Cola 0.2",
+    img: 'https://images.unsplash.com/photo-1534260164206-2a3a4a72891d',
+    title: 'Cola Zero',
+    volume: '500 ml',
+    price: '5 usd'
   },
   {
+    key: 'b',
     id: 2,
-    name: "Coca Cola 0.5",
+    img: 'https://images.unsplash.com/photo-1534260164206-2a3a4a72891d',
+    title: 'Cola Zero',
+    volume: '1000 ml',
+    price: '7 usd'
   },
+  {
+    key: 'c',
+    id: 3,
+    img: 'https://images.unsplash.com/photo-1534260164206-2a3a4a72891d',
+    title: 'Cola Zero',
+    volume: '2000 ml',
+    price: '10 usd'
+  }
 ];
 
 const ALL_PRODUCTS = [
   ...PRODUCTS,
   {
-    id: 3,
-    name: "Coca Cola 1",
-  },
-  {
+    key: 'd',
     id: 4,
-    name: "Coca Cola 2",
-  },
+    img: 'https://images.unsplash.com/photo-1534260164206-2a3a4a72891d',
+    title: 'Cola Zero',
+    volume: '4000 ml',
+    price: '15 usd'
+  }
 ];
 
 module.exports = [
   {
     id: "get-products", // route id
-    url: "/api/users", // url in express format
+    url: "/api/products", // url in express format
     method: "GET", // HTTP method
     variants: [
       {
@@ -37,7 +48,7 @@ module.exports = [
         type: "json", // variant handler id
         options: {
           status: 200, // status to send
-          body: PRODUCTS, // body to send
+          body: ALL_PRODUCTS, // body to send
         },
       },
       {
@@ -62,8 +73,8 @@ module.exports = [
     ],
   },
   {
-    id: "get-user", // route id
-    url: "/api/users/:id", // url in express format
+    id: "get-product", // route id
+    url: "/api/products/:id", // url in express format
     method: "GET", // HTTP method
     variants: [
       {
