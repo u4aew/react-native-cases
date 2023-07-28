@@ -7,7 +7,7 @@ const Cases = ({ navigation }) => {
   };
 
   const onGoProduct = () => {
-    navigation.navigate('CasesProduct');
+    navigation.navigate('CasesProducts');
   };
 
   return (
@@ -18,7 +18,7 @@ const Cases = ({ navigation }) => {
       </View>
       <View>
         <Text>Cases 1</Text>
-        <Button title="Product" onPress={onGoProduct} />
+        <Button title="Products" onPress={onGoProduct} />
       </View>
     </View>
   );

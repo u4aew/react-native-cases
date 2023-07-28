@@ -1,6 +1,7 @@
 import React, {useEffect, useContext} from 'react';
 import {View, StyleSheet, Dimensions, Text} from 'react-native';
 import {BottomSheetContext} from '../../context/BottomSheetProvider';
+import { PortalHost } from "@gorhom/portal";
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
@@ -37,7 +38,7 @@ export default function BottomSheet() {
 
   useEffect(() => {
     translateY.value = withTiming(isOpen ? 0 : windowHeight);
-    opacity.value = withTiming(isOpen ? 0.5 : 0);
+    opacity.value = withTiming(isOpen ? 0.75 : 0);
   }, [isOpen]);
 
   const animatedStyles = useAnimatedStyle(() => {
@@ -55,34 +56,7 @@ export default function BottomSheet() {
               style={[styles.box, styles.overlay, {opacity: opacity}]}
             />
             <Animated.View style={[styles.container, animatedStyles]}>
-              <Text>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Adipisci at blanditiis consequatur culpa dolorum, expedita
-                impedit in itaque iure mollitia optio praesentium soluta totam
-                unde voluptatum. Expedita veritatis vitae voluptate! Lorem ipsum
-                dolor sit amet, consectetur adipisicing elit. Adipisci at
-                blanditiis consequatur culpa dolorum, expedita impedit in itaque
-                iure mollitia optio praesentium soluta totam unde voluptatum.
-                Expedita veritatis vitae voluptate! Lorem ipsum dolor sit amet,
-                consectetur adipisicing elit. Adipisci at blanditiis consequatur
-                culpa dolorum, expedita impedit in itaque iure mollitia optio
-                praesentium soluta totam unde voluptatum. Expedita veritatis
-                vitae voluptate! Lorem ipsum dolor sit amet, consectetur
-                adipisicing elit. Adipisci at blanditiis consequatur culpa
-                dolorum, expedita impedit in itaque iure mollitia optio
-                praesentium soluta totam unde voluptatum. Expedita veritatis
-                vitae voluptate! Lorem ipsum dolor sit amet, consectetur
-                adipisicing elit. Adipisci at blanditiis consequatur culpa
-                dolorum, expedita impedit in itaque iure mollitia optio
-                praesentium soluta totam unde voluptatum. Expedita veritatis
-                vitae voluptate! Lorem ipsum dolor sit amet, consectetur
-                adipisicing elit. Adipisci at blanditiis consequatur culpa
-                dolorum, expedita impedit in itaque iure mollitia optio
-                praesentium soluta totam unde voluptatum. Expedita veritatis
-                vitae voluptate! Lorem ipsum dolor sit amet, consectetur
-                adipisicing elit. Adipisci at blanditiis consequatur culpa
-                dolorum,
-              </Text>
+              <PortalHost name="BottomSheetContent" />
             </Animated.View>
           </View>
         </PanGestureHandler>
@@ -108,6 +82,9 @@ const styles = StyleSheet.create({
     bottom: 0,
     width: '100%',
     height: '95%',
-    backgroundColor: 'red',
+    backgroundColor: 'white',
+    borderTopLeftRadius: 30,
+    borderTopRightRadius: 30,
+    overflow: 'hidden'
   },
 });

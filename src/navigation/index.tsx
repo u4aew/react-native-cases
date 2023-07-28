@@ -5,6 +5,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import HomeScreen from '../screens/Home';
 import Index from './CasesStack';
 import BottomSheet from '../components/BottomSheet';
+import {PortalProvider} from '@gorhom/portal';
 import {BottomSheetProvider} from '../context/BottomSheetProvider';
 
 const Tab = createBottomTabNavigator();
@@ -23,12 +24,14 @@ const MyTabs = () => {
 
 const Navigation = () => {
   return (
-    <BottomSheetProvider>
-      <NavigationContainer>
-        <MyTabs />
-      </NavigationContainer>
-      <BottomSheet />
-    </BottomSheetProvider>
+    <PortalProvider>
+      <BottomSheetProvider>
+        <NavigationContainer>
+          <MyTabs />
+        </NavigationContainer>
+        <BottomSheet />
+      </BottomSheetProvider>
+    </PortalProvider>
   );
 };
 
