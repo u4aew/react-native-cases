@@ -11,13 +11,12 @@ type Props = {
 const Gallery = ({images}: Props) => {
   const width = Dimensions.get('window').width;
   return (
-    <View style={{flex: 1}}>
+    <View>
       <Carousel
         width={width}
         height={230}
         data={images}
         scrollAnimationDuration={1000}
-        vertical={true}
         onSnapToItem={index => console.log('current index:', index)}
         renderItem={({index, item}) => (
           <View
