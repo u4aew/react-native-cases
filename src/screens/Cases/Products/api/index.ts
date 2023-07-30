@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:3100';
+const BASE_URL = 'http://172.18.1.137:3100';
 
 export async function fetchProducts() {
   try {

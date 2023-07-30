@@ -46,6 +46,8 @@ export const fetchProductsAsync = () => async (dispatch: AppDispatch) => {
     dispatch(fetchProductsSuccess(products));
   } catch (error) {
     // @ts-ignore
+    console.log(error.message, 'error.message')
+    // @ts-ignore
     dispatch(fetchProductsFailure(error.message));
   }
 };

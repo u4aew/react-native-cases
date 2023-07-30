@@ -14,17 +14,17 @@ module.exports = {
     //register: [],
     proxyRoutesHandler: {
     },
-    adminApi: {
-      // Port number for the admin API server to be listening at
-      port: 3110,
-      // Host for the admin API server
-      host: "0.0.0.0",
-      https: {
-        enabled: true,
-        cert: "./cert.pem",
-        key: "./key.pem"
-      }
-    },
+    // adminApi: {
+    //   // Port number for the admin API server to be listening at
+    //   port: 3110,
+    //   // Host for the admin API server
+    //   host: "0.0.0.0",
+    //   https: {
+    //     enabled: true,
+    //     cert: "./cert.pem",
+    //     key: "./key.pem"
+    //   }
+    // },
     inquirerCli: {
       // Start interactive CLI or not
       //enabled: true,
