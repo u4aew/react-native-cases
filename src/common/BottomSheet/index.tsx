@@ -28,9 +28,7 @@ export default function BottomSheet() {
   const opacity = useSharedValue(0);
 
   const gestureHandler = (event: PanGestureHandlerGestureEvent) => {
-    if (event.nativeEvent.translationY < 0) {
-      translateY.value = withSpring(event.nativeEvent.translationY);
-    } else if (event.nativeEvent.translationY > 0) {
+    if (event.nativeEvent.translationY > 0) {
       translateY.value = withSpring(windowHeight);
       closeBottomSheet();
     }

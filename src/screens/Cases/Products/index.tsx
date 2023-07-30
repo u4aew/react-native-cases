@@ -1,9 +1,10 @@
 import React, {useCallback, useContext, useEffect, useState} from 'react';
 import {FlatList, View, StyleSheet, Text} from 'react-native';
-import Preview from './components/Preview';
+import Preview from './containers/Preview';
 import {useSelector, useDispatch} from 'react-redux';
 import {BottomSheetContext} from '../../../context/BottomSheetProvider';
 import {selectProducts, fetchProductsAsync} from './slice';
+import Gallery from './containers/Gallery';
 import {Portal} from '@gorhom/portal';
 
 const Product = () => {
@@ -41,7 +42,16 @@ const Product = () => {
         numColumns={2}
       />
       <Portal hostName="BottomSheetContent">
-        <Text>Text to be teleported to the CustomView component</Text>
+        <Gallery
+          images={[
+            {
+              uri: 'https://images.unsplash.com/photo-1562952546-12992a813a51?&auto=format&fit=crop&w=670'
+            },
+            {
+              uri: 'https://images.unsplash.com/photo-1590240568022-6d30acfd5dbd?&auto=format&fit=crop&w=670'
+            },
+          ]}
+        />
       </Portal>
     </View>
   );
